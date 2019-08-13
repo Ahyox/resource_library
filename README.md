@@ -46,7 +46,13 @@ DownloadListener listener = new DownloadListener() {
     };
 
 //3. Subscribe to request
-resource.subscribe(listener, listenerId);
+request.subscribe(listener, listenerId);
+
+//4. To Unsubscribe or cancel subscription call cancel with listenerId passed
+request.cancel(listenerId);
+
+//5. Cancel all subscription call
+request.cancelAll();
 ```
 
 ## Contributing
@@ -55,4 +61,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[Apache](https://www.apache.org/licenses/LICENSE-2.0)
