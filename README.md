@@ -29,19 +29,12 @@ Request request = new FileRequest(application, baseUrl, path);
 DownloadListener listener = new DownloadListener() {
         @Override
         public void onCompleted(InputStream inputStream) {
-            try {
-                List<ResourceInfo> info = utility.readJsonStream(inputStream);
-
-                if (info != null)
-                    setValue(info);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            //Process response gotten from the server
         }
 
         @Override
         public void onError(Throwable e) {
-
+			//Oops an error response do the needful
         }
     };
 
